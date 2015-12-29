@@ -170,7 +170,15 @@ endif
 
 ## SimpleOpts ##
 # SimpleOpts must be placed here as they rely on my_clang being defined above
-include $(BUILD_SYSTEM)/simpleopts.mk
+ifneq ($(DISABLE_SMP_OPTS),true)
+  include $(BUILD_SYSTEM)/simpleopts.mk
+endif
+
+## DragonTC ##
+# DragonTC is placed after SimpleOpts to avoid conflicts
+ifneq ($(DISABLE_DTC_OPTS),true)
+  include $(BUILD_SYSTEM)/dragontc.mk
+endif
 
 # clang is enabled by default for host builds
 # enable it unless we've specifically disabled clang above
