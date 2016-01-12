@@ -39,7 +39,6 @@ CLANG_CONFIG_arm_UNKNOWN_CFLAGS := \
   -fno-strict-volatile-bitfields \
   -fno-tree-copy-prop \
   -fno-tree-loop-optimize \
-  -Wa,--noexecstack \
   -fipa-sra \
   -fipa-cp \
   -fipa-cp-clone \
